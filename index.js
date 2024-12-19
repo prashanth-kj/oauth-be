@@ -15,7 +15,7 @@ const app=express()
 const PORT=process.env.PORT
 
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://gregarious-youtiao-7ffe0c.netlify.app",
     credentials:true
 }))
 app.use(express.json())
