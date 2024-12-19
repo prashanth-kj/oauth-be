@@ -15,7 +15,7 @@ export const logout = (req, res) => {
 
 export const getCurrentUser = (req, res) => {
    
-    console.log(req.user); // Log the user object to check the session data
+    // console.log(req.user); // Log the user object to check the session data
     if (!req.user) {
         return res.status(401).send({ message: "User not authenticated" });
     }
