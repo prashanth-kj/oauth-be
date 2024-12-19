@@ -23,7 +23,7 @@ passport.use(new GoogleStrategy(
         return done(new Error('Email is required'), null);
       }
       const user = await userModel.findOne({email});
-        console.log(user)
+        // console.log(user)
       if (user) {
         if(!user.googleId){
            user.googleId=id;
@@ -110,13 +110,13 @@ passport.use(new GithubStrategy(
 
 // Serialize the user to store in the session
 passport.serializeUser((user, done) => {
-  console.log("serialize user:" + user)
+  // console.log("serialize user:" + user)
    done(null, user._id);
 });
 
 passport.deserializeUser(async (id, done) => {
   try {
-     console.log('deserialize user: ' + id)
+    //  console.log('deserialize user: ' + id)
      let user = await userModel.findOne({_id:id})
     if (!user) {
       return done(new Error("User not found"), null); 
